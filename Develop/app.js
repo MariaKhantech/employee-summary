@@ -19,12 +19,25 @@ const intern2 = new Intern('Sheena Brissot', 04, 'sheenabrissot@gmail.com', 'Uni
 
 const employees = [ manager, engineer1, engineer2, intern1, intern2 ];
 
-const renderedHTML = render(employees);
+const init = async () => {
+	//start asking the questions to the users
+	const renderedHTML = await render(employees);
+	console.log('renderedHTML');
+	//checking to see if output folder exists
+	if (!fs.existsSync(OUTPUT_DIR)) {
+		fs.mkdirSync(OUTPUT_DIR);
+	}
+	console.log('about to write');
+	//writes renderedHTML to a file in outputpath
+	fs.writeFile(outputPath, renderedHTML, (err) => {
+		if (err) {
+			throw err;
+		}
+	});
+};
 
-//checking to see if output folder exists
-if (!fs.existsSync(OUTPUT_DIR)) {
-	fs.mkdirSync(OUTPUT_DIR);
-}
+//calling init function
+init();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
