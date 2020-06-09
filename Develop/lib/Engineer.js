@@ -12,8 +12,8 @@ class Engineer extends Employee {
 	}
 
 	getRole() {
-		return Engineer;
+		return `Engineer`;
 	}
 }
 
-module.export = Engineer;
+module.exports = Engineer;
