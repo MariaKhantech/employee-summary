@@ -110,12 +110,17 @@ const askManagerAdd = async () => {
 	await inquirer
 		.prompt(addEmployeeQuestion)
 		.then(async (response) => {
+			//checks if manager wants to add an employee
 			if (response.addEmployee === true) {
+				//checks employee type
 				if (response.employeeType === 'Engineer') {
 					//ask the engineer questions
+					askEngineerAdd();
 				} else {
 					//ask the intern questions
+					askInternAdd();
 				}
+				//calling function inside itself to go back and ask manager if wants to add another employee
 				askManagerAdd();
 			}
 		})
@@ -124,6 +129,43 @@ const askManagerAdd = async () => {
 		});
 };
 
+//function that prompts Engineer questions
+const askEngineerAdd = async () => {
+	await inquirer
+		.prompt(engineerQuestions)
+		.then(async (response) => {
+			const engineer = new Engineer(
+				response.engineerName,
+				response.engineerId,
+				response.engineerEmail,
+				response.engineerGithub
+			);
+			employees.push(engineer);
+		})
+		.catch((error) => {
+			throw error;
+		});
+};
+
+//function that prompts the Intern questions
+const askInternAdd = async () => {
+	await inquirer
+		.prompt(internQuestions)
+		.then(async (response) => {
+			const intern = new Intern(
+				response.internName,
+				response.internId,
+				response.internEmail,
+				response.internSchool
+			);
+			employees.push(intern);
+		})
+		.catch((error) => {
+			throw error;
+		});
+};
+
+//entry point that asks the questions, builds HTML and writes to file
 const init = async () => {
 	//prompting manager questions
 	await inquirer
@@ -141,6 +183,7 @@ const init = async () => {
 		.catch((error) => {
 			throw error;
 		});
+
 	//start asking the questions to the users
 	const renderedHTML = await render(employees);
 	//checking to see if output folder exists
