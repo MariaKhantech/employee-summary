@@ -1,4 +1,4 @@
-# Employee Summary
+# Team Generator
 
 <!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
 ![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)
