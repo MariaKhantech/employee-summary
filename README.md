@@ -19,18 +19,19 @@ These are the programs used:
 
 
 #### Contributors
----
 
-<ins>Maria Khan:</ins> 
+***<ins>Maria Khan:</ins>***
 
- Check out my GitHub:
+ Check out my GitHub
 
 * [@MariaKhantech](https://github.com/MariaKhantech) 💻
 
-### Contact
+* * *
+#### Contact
 
 If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 
-#### Example of Use
+
+#### Example of Use:
 ---
 
