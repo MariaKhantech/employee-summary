@@ -21,9 +21,9 @@ These are the programs used:
 #### Contributors
 ---
 
-Maria Khan 
+<ins>Maria Khan:</ins> 
 
-Check out my GitHub:
+ Check out my GitHub:
 
 * [@MariaKhantech](https://github.com/MariaKhantech) 💻
 
