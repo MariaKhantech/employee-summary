@@ -197,7 +197,6 @@ const init = async () => {
 		if (err) {
 			throw err;
 		}
-		console.log('getting deleted');
 	});
 };
 
