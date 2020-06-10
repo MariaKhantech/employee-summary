@@ -36,6 +36,5 @@ If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 ## Example of Use:
 
 
-----
 ***Link for github***
 https://mariakhantech.github.io/employee-summary/.
