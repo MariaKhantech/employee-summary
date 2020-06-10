@@ -15,6 +15,7 @@ These are the programs used:
 - `Node packages`
     * `Inquirer`
     * `Jest`
+ 
  You can check out these package documents for reference to usage [Jest cheatsheet](https://github.com/sapegin/jest-cheat-sheet) and [Inquirer documentation](https://www.npmjs.com/package/inquirer).
 
 
