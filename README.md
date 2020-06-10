@@ -7,7 +7,16 @@ Project name is Employee Summary.
 
 This web application allows for management to create a team generator. You may add a manger, engineer and interns. 
 
-## Programs used:
+## Table of contents
+- [Programs](#Programs)
+- [Contributors](#Contributors)
+- [Contact](#Contact)
+- [Example of Use](#Example of use)
+- [Link for github](#Link for github)
+  
+   
+
+## Programs
 
 These are the programs used:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
