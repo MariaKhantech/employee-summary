@@ -5,34 +5,154 @@ const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
 
+//creates output folder and creates a path to renderHTML
 const OUTPUT_DIR = path.resolve(__dirname, 'output');
 const outputPath = path.join(OUTPUT_DIR, 'team.html');
-console.log(outputPath, OUTPUT_DIR);
 const render = require('./lib/htmlRenderer');
 
-//testing that objects were created
-const manager = new Manager('Mike Flower', 01, 'mikeflower22@gmail.com', '603-222-2223');
-const engineer1 = new Engineer('Ryan Powers', 02, 'ryanpowers@gmail.com', 'ryantechnerd');
-const engineer2 = new Engineer('Jose Sanchez', 03, 'josesanchez22@gmail.com', 'josetechyman');
-const intern1 = new Intern('Martha Pena', 04, 'marthapena1@gmail.com', 'University of New Hampshire');
-const intern2 = new Intern('Sheena Brissot', 04, 'sheenabrissot@gmail.com', 'University of New York');
+//Questions to create team manager
+const managerQuestions = [
+	{
+		type: 'input',
+		name: 'managerName',
+		message: 'What is first and last name?'
+	},
+	{
+		type: 'input',
+		name: 'managerId',
+		message: 'What is your employee ID?'
+	},
+	{
+		type: 'input',
+		name: 'managerEmail',
+		message: 'What is your company email?'
+	},
+	{
+		type: 'input',
+		name: 'managerOfficenumber',
+		message: 'What is your office number?'
+	}
+];
 
-const employees = [ manager, engineer1, engineer2, intern1, intern2 ];
+//Questions to create team manager
+const engineerQuestions = [
+	{
+		type: 'input',
+		name: 'engineerName',
+		message: 'What is the first and last name?'
+	},
+	{
+		type: 'input',
+		name: 'engineerId',
+		message: 'What is their employee ID?'
+	},
+	{
+		type: 'input',
+		name: 'engineerEmail',
+		message: 'What is their company email?'
+	},
+	{
+		type: 'input',
+		name: 'engineerGithub',
+		message: 'What is their GitHub username?'
+	}
+];
+
+//Questions to create team manager
+const internQuestions = [
+	{
+		type: 'input',
+		name: 'internName',
+		message: 'What is the first and last name?'
+	},
+	{
+		type: 'input',
+		name: 'internId',
+		message: 'What is their employee ID?'
+	},
+	{
+		type: 'input',
+		name: 'internEmail',
+		message: 'What is their company email?'
+	},
+	{
+		type: 'input',
+		name: 'internSchool',
+		message: 'What school did they attend?'
+	}
+];
+
+//Prompt for new Employee
+const addEmployeeQuestion = [
+	{
+		type: 'confirm',
+		name: 'addEmployee',
+		message: 'Would you like to add another employee?'
+	},
+	{
+		//stack overflow https://stackoverflow.com/questions/49520423/is-there-a-way-to-use-previous-answers-in-inquirer-when-presenting-a-prompt-inq
+		//if the answer above is yes then we ask which type of employee to add
+		when: (response) => {
+			return response.addEmployee === true;
+		},
+		type: 'list',
+		name: 'employeeType',
+		message: 'What type of employee would you like to add?',
+		choices: [ 'Engineer', 'Intern' ]
+	}
+];
+
+//employees
+const employees = [];
+
+//function to ask the manager if he wants more employees
+const askManagerAdd = async () => {
+	await inquirer
+		.prompt(addEmployeeQuestion)
+		.then(async (response) => {
+			if (response.addEmployee === true) {
+				if (response.employeeType === 'Engineer') {
+					//ask the engineer questions
+				} else {
+					//ask the intern questions
+				}
+				askManagerAdd();
+			}
+		})
+		.catch((error) => {
+			throw error;
+		});
+};
 
 const init = async () => {
+	//prompting manager questions
+	await inquirer
+		.prompt(managerQuestions)
+		.then(async (response) => {
+			const manager = new Manager(
+				response.managerName,
+				response.managerId,
+				response.managerEmail,
+				response.managerOfficenumber
+			);
+			//pushing manager into the array starts position 0
+			employees.push(manager);
+		})
+		.catch((error) => {
+			throw error;
+		});
 	//start asking the questions to the users
 	const renderedHTML = await render(employees);
-	console.log('renderedHTML');
 	//checking to see if output folder exists
 	if (!fs.existsSync(OUTPUT_DIR)) {
 		fs.mkdirSync(OUTPUT_DIR);
 	}
-	console.log('about to write');
 	//writes renderedHTML to a file in outputpath
 	fs.writeFile(outputPath, renderedHTML, (err) => {
 		if (err) {
 			throw err;
 		}
+		console.log('getting deleted');
 	});
 };
 
