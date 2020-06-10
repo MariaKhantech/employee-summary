@@ -18,7 +18,7 @@ These are the programs used:
  You can check out these package documents for reference to usage [Jest cheatsheet](https://github.com/sapegin/jest-cheat-sheet) and [Inquirer documentation](https://www.npmjs.com/package/inquirer).
 
 
-#### Contributors
+## Contributors
 
 ***<ins>Maria Khan:</ins>***
 
@@ -27,7 +27,7 @@ These are the programs used:
 * [@MariaKhantech](https://github.com/MariaKhantech) 💻
 
 * * *
-#### Contact
+## Contact
 
 If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 
