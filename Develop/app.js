@@ -39,7 +39,7 @@ const engineerQuestions = [
 	{
 		type: 'input',
 		name: 'engineerName',
-		message: 'What is the first and last name?'
+		message: "What is the Engineer's first and last name?"
 	},
 	{
 		type: 'input',
@@ -63,7 +63,7 @@ const internQuestions = [
 	{
 		type: 'input',
 		name: 'internName',
-		message: 'What is the first and last name?'
+		message: "What is the Intern's first and last name?"
 	},
 	{
 		type: 'input',
@@ -102,7 +102,7 @@ const addEmployeeQuestion = [
 	}
 ];
 
-//employees
+//empty employee array used for pushing employees once they are created
 const employees = [];
 
 //function to ask the manager if he wants more employees
@@ -115,13 +115,13 @@ const askManagerAdd = async () => {
 				//checks employee type
 				if (response.employeeType === 'Engineer') {
 					//ask the engineer questions
-					askEngineerAdd();
+					await askEngineerAdd();
 				} else {
 					//ask the intern questions
-					askInternAdd();
+					await askInternAdd();
 				}
 				//calling function inside itself to go back and ask manager if wants to add another employee
-				askManagerAdd();
+				await askManagerAdd();
 			}
 		})
 		.catch((error) => {
@@ -179,6 +179,8 @@ const init = async () => {
 			);
 			//pushing manager into the array starts position 0
 			employees.push(manager);
+			//retrieves response on whether the manager wants to add employees
+			await askManagerAdd();
 		})
 		.catch((error) => {
 			throw error;
