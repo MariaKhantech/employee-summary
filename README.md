@@ -26,12 +26,12 @@ These are the programs used:
 
 * [@MariaKhantech](https://github.com/MariaKhantech) 💻
 
-* * *
+
 ## Contact
 
 If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 
 
-#### Example of Use:
----
+## Example of Use:
+
 
