@@ -37,5 +37,5 @@ If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 
 
 ----
-***Link for example:***
+***Link for github***
 https://mariakhantech.github.io/employee-summary/.
