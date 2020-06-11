@@ -7,7 +7,15 @@ Project name is Employee Summary.
 
 This web application allows for management to create a team generator. You may add a manger, engineer and interns. 
 
-## Programs used:
+## Table of contents
+- [Programs](#Programs)
+- [Contributors](#Contributors)
+- [Contact](#Contact)
+- [Example of use](#Example-of-use)
+  
+   
+
+## Programs
 
 These are the programs used:
 <!--- These are just example requirements. Add, duplicate or remove as required --->
@@ -33,9 +41,9 @@ These are the programs used:
 If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 
 
-## Example of Use:
+## Example of use:
 ![team-generator](https://user-images.githubusercontent.com/61640527/84329521-df491c80-ab52-11ea-8c8b-b90193d1ded4.gif)
 
 ---
-***Link for github***
+***Link for GitHub***
 https://mariakhantech.github.io/employee-summary/.
