@@ -12,7 +12,6 @@ This web application allows for management to create a team generator. You may a
 - [Contributors](#Contributors)
 - [Contact](#Contact)
 - [Example of use](#Example-of-use)
-- [Link for GitHub](#Link-for-GitHub)
   
    
 
