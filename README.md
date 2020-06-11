@@ -11,8 +11,8 @@ This web application allows for management to create a team generator. You may a
 - [Programs](#Programs)
 - [Contributors](#Contributors)
 - [Contact](#Contact)
-- [Example of Use](#Example of use)
-- [Link for github](#Link for github)
+- [Example of Use](#Example_of_use)
+- [Link for github](#Link_for_GitHub)
   
    
 
@@ -46,5 +46,5 @@ If you want to contact me you can reach me at <mariatechfuture@gmail.com>.
 ![team-generator](https://user-images.githubusercontent.com/61640527/84329521-df491c80-ab52-11ea-8c8b-b90193d1ded4.gif)
 
 ---
-***Link for github***
+***Link for GitHub***
 https://mariakhantech.github.io/employee-summary/.
